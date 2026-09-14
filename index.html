@@ -1,1 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jamilyn Chrisha Chan — Admin & Operations Support for Trades Businesses</title>
+<meta name="description" content="Admin and operations support for trades and technician-based businesses — inbox, social media, bookings, and back-office, handled reliably.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1E2A38;
+    --slate: #57636E;
+    --paper: #F3F1EB;
+    --paper-raised: #FFFFFF;
+    --brass: #A8793C;
+    --brass-dark: #8A6230;
+    --line: #D8D2C4;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    font-family: 'Archivo', sans-serif;
+    color: var(--ink);
+    margin: 0;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+  a { color: var(--brass-dark); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--brass-dark); outline-offset: 3px; }
 
+  header {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.2px; }
+  nav a { color: var(--slate); font-size: 15px; margin-left: 26px; font-weight: 500; }
+  nav a:hover { color: var(--ink); text-decoration: none; }
+
+  .hero {
+    position: relative;
+    padding: 76px 0 60px;
+    background-image:
+      linear-gradient(var(--paper) 0%, var(--paper) 100%),
+      repeating-linear-gradient(0deg, rgba(30,42,56,0.05) 0px, rgba(30,42,56,0.05) 1px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(90deg, rgba(30,42,56,0.05) 0px, rgba(30,42,56,0.05) 1px, transparent 1px, transparent 40px);
+    background-blend-mode: normal;
+  }
+  .hero-inner {
+    display: flex;
+    gap: 44px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .hero-text { flex: 1; min-width: 0; }
+  .hero-photo {
+    flex-shrink: 0;
+    width: 168px;
+    height: 168px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 3px solid var(--brass);
+    margin-top: 4px;
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 800;
+    max-width: 13ch;
+  }
+  .hero-rule {
+    width: 64px;
+    height: 4px;
+    background: var(--brass);
+    margin: 22px 0 22px;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--slate);
+    max-width: 46ch;
+    margin: 0 0 32px;
+  }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper-raised); }
+  .btn-primary:hover { background: #14202C; text-decoration: none; }
+  .btn-secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper-raised); text-decoration: none; }
+
+  .stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+  .stat-num { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 26px; color: var(--brass-dark); }
+  .stat-label { font-size: 14px; color: var(--slate); margin-top: 2px; }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  .section-label { font-size: 14px; font-weight: 600; color: var(--brass-dark); margin-bottom: 10px; }
+  .section-title { font-size: 26px; font-weight: 700; margin-bottom: 22px; max-width: 30ch; }
+
+  .lead { font-size: 18px; color: var(--ink); max-width: 58ch; }
+  .lead + .lead { margin-top: 16px; }
+
+  .services { list-style: none; margin: 0; padding: 0; }
+  .services li {
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+  }
+  .services li:last-child { border-bottom: 1px solid var(--line); }
+  .services .mark { color: var(--brass); font-size: 20px; line-height: 1.4; flex-shrink: 0; }
+  .services .body strong { display: block; font-size: 17px; margin-bottom: 3px; }
+  .services .body span { color: var(--slate); font-size: 15.5px; }
+
+  .tl-item { position: relative; padding-left: 24px; margin-bottom: 34px; border-left: 2px solid var(--line); }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    background: var(--brass);
+    border-radius: 50%;
+  }
+  .tl-role { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 18px; }
+  .tl-meta { color: var(--slate); font-size: 14.5px; margin: 3px 0 10px; }
+  .tl-item ul { margin: 0; padding-left: 18px; }
+  .tl-item li { margin-bottom: 6px; font-size: 15.5px; }
+
+  .contact-box {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 4px;
+    padding: 40px;
+  }
+  .contact-box h2 { color: var(--paper-raised); font-size: 26px; margin-bottom: 12px; }
+  .contact-box p { color: #C7CDD3; font-size: 16px; max-width: 48ch; margin: 0 0 26px; }
+  .contact-box .btn-primary { background: var(--brass); color: var(--ink); }
+  .contact-box .btn-primary:hover { background: #BE8B4C; }
+  .contact-box .btn-secondary { border-color: #4A5A68; color: var(--paper-raised); }
+  .contact-box .btn-secondary:hover { background: var(--paper-raised); color: var(--ink); }
+  .contact-meta { margin-top: 26px; font-size: 14.5px; color: #98A3AC; }
+  .contact-meta a { color: #D9C6A3; }
+
+  footer { padding: 30px 0 50px; font-size: 13.5px; color: var(--slate); }
+  footer a { color: var(--slate); }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 30px; }
+    .hero { padding: 52px 0 44px; }
+    .section-title { font-size: 22px; }
+    .stats { gap: 28px; }
+    .hero-inner { flex-direction: column-reverse; }
+    .hero-photo { width: 108px; height: 108px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Jamilyn Chrisha Chan</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="border-bottom: none;">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Keeps your bookings, inbox, and paperwork moving — so you can stay on the tools.</h1>
+          <div class="hero-rule"></div>
+          <p class="hero-sub">Admin and operations support for trades and technician-based businesses. 3+ years handling service orders and warranty claims for a major appliance manufacturer's AU/NZ technician network — now doing the same for individual trades businesses.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+            <a class="btn btn-secondary" href="Jamilyn_Chan_Resume.pdf" target="_blank" rel="noopener">View resume</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="jamilyn.jpg" alt="Jamilyn Chrisha Chan">
+        </div>
+      </div>
+      <div class="stats">
+        <div>
+          <div class="stat-num">200+</div>
+          <div class="stat-label">Warranty & service cases handled monthly</div>
+        </div>
+        <div>
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Accuracy rate</div>
+        </div>
+        <div>
+          <div class="stat-num">&lt;2h</div>
+          <div class="stat-label">Average response time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-label">About</div>
+      <h2 class="section-title">The back-office side of a trades business, covered.</h2>
+      <p class="lead">I've spent the last three years inside the CRM and support queue for a major appliance manufacturer's AU/NZ warranty program — coordinating service orders between technicians, service agents, and customers, processing payment and refund requests, and keeping response times under two hours without letting accuracy slip.</p>
+      <p class="lead">That's the same job as running the admin side of a trades business, just from the manufacturer's end of it. I know what a service order needs to say, what a customer expects to hear back, and how to keep a job moving without you having to chase it yourself.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-label">What I handle</div>
+      <h2 class="section-title">The admin that eats into your day</h2>
+      <ul class="services">
+        <li>
+          <span class="mark">&#9632;</span>
+          <span class="body"><strong>Inbox & email management</strong><span>Sorting, responding, and flagging what actually needs your attention.</span></span>
+        </li>
+        <li>
+          <span class="mark">&#9632;</span>
+          <span class="body"><strong>Social media management</strong><span>Facebook, Instagram, and TikTok — customer inquiries, comments, and posting.</span></span>
+        </li>
+        <li>
+          <span class="mark">&#9632;</span>
+          <span class="body"><strong>Bookings & job coordination</strong><span>Scheduling, confirmations, and follow-ups so nothing gets double-booked or missed.</span></span>
+        </li>
+        <li>
+          <span class="mark">&#9632;</span>
+          <span class="body"><strong>Payment & refund handling</strong><span>Reviewing requests, keeping records straight, routing them where they need to go.</span></span>
+        </li>
+        <li>
+          <span class="mark">&#9632;</span>
+          <span class="body"><strong>Documentation & records</strong><span>Service order notes, customer records, and the paper trail that keeps a job accountable.</span></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">Where this comes from</h2>
+      <div class="tl-item">
+        <div class="tl-role">Customer Support Senior Specialist</div>
+        <div class="tl-meta">Platserv — Beko AU&amp;NZ Account (Manufacturer) · Apr 2024 – Present</div>
+        <ul>
+          <li>Manage 50+ daily customer interactions across phone and email, sub-2-hour response times</li>
+          <li>Process 200+ appliance warranty claims monthly at 98% accuracy</li>
+          <li>Review and submit payment and refund requests alongside service orders, routing them to the designated team</li>
+          <li>Coordinate between technical advisors, service agents, and customers to resolve service order issues</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Process Associate</div>
+        <div class="tl-meta">Genpact Services LLC — Financial Retail Support · Oct 2022 – Jan 2024</div>
+        <ul>
+          <li>Handled 50–60 inbound calls daily, resolving account inquiries with First Call Resolution</li>
+          <li>Managed transaction inquiries, disputes, and documentation requests with accurate record-keeping</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Co-Founder, Operations</div>
+        <div class="tl-meta">Dubai Beauty Cart — E-commerce Venture · 2025</div>
+        <ul>
+          <li>Managed the business's multi-channel inbox across TikTok, Facebook, and Instagram</li>
+          <li>Coordinated directly with suppliers via WhatsApp and Telegram for order and inventory communication</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="border-bottom: none;">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>Have a backlog of admin that needs someone reliable on it?</h2>
+        <p>Based in the Philippines, available full-time, and comfortable working across time zones. Happy to talk through what you need handled first.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="mailto:jamilynchrisha.chan@gmail.com">Email me</a>
+          <a class="btn btn-secondary" href="Jamilyn_Chan_Resume.pdf" target="_blank" rel="noopener">View resume</a>
+        </div>
+        <div class="contact-meta">
+          jamilynchrisha.chan@gmail.com &nbsp;·&nbsp; +63 969 145 4898 &nbsp;·&nbsp; PHT (GMT+8)
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 Jamilyn Chrisha Chan &nbsp;·&nbsp; <a href="../">See other work</a>
+  </div>
+</footer>
+
+</body>
+</html>

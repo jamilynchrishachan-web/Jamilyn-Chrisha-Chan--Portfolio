@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jamilyn Chrisha Chan — NDIS Administrative & Compliance Support</title>
+<meta name="description" content="NDIS-certified administrative support — documentation, compliance tracking, and case coordination for NDIS providers and disability support services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #24413E;
+    --slate: #5C6B67;
+    --paper: #F6F4EF;
+    --paper-raised: #FFFFFF;
+    --sage: #6B8F7F;
+    --sage-dark: #4F6F61;
+    --line: #DAD5C9;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  h1, h2 {
+    font-family: 'Fraunces', serif;
+    color: var(--ink);
+    margin: 0;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+  a { color: var(--sage-dark); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--sage-dark); outline-offset: 3px; }
 
+  header {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; }
+  nav a { color: var(--slate); font-size: 15px; margin-left: 26px; font-weight: 500; font-family: 'Inter', sans-serif; }
+  nav a:hover { color: var(--ink); text-decoration: none; }
+
+  .hero { padding: 76px 0 60px; }
+  .hero-inner {
+    display: flex;
+    gap: 44px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .hero-text { flex: 1; min-width: 0; }
+  .hero-photo {
+    flex-shrink: 0;
+    width: 168px;
+    height: 168px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 3px solid var(--sage);
+    margin-top: 4px;
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero h1 {
+    font-size: 38px;
+    line-height: 1.25;
+    font-weight: 600;
+    max-width: 15ch;
+  }
+  .hero-rule { width: 64px; height: 4px; background: var(--sage); margin: 22px 0; }
+  .hero-sub { font-size: 18px; color: var(--slate); max-width: 48ch; margin: 0 0 32px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 12px 22px; font-weight: 600; font-size: 15px; border-radius: 3px; border: 1px solid transparent; font-family: 'Inter', sans-serif; }
+  .btn-primary { background: var(--ink); color: var(--paper-raised); }
+  .btn-primary:hover { background: #1A3230; text-decoration: none; }
+  .btn-secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper-raised); text-decoration: none; }
+
+  .stats { display: flex; gap: 40px; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+  .stat-num { font-family: 'Fraunces', serif; font-weight: 600; font-size: 25px; color: var(--sage-dark); }
+  .stat-label { font-size: 14px; color: var(--slate); margin-top: 2px; }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  .section-label { font-size: 14px; font-weight: 600; color: var(--sage-dark); margin-bottom: 10px; }
+  .section-title { font-size: 26px; font-weight: 600; margin-bottom: 22px; max-width: 32ch; }
+
+  .lead { font-size: 18px; color: var(--ink); max-width: 58ch; }
+  .lead + .lead { margin-top: 16px; }
+
+  .cert-box {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--sage);
+    border-radius: 3px;
+    padding: 22px 26px;
+  }
+  .cert-box p { margin: 0 0 8px; font-weight: 600; font-size: 16px; }
+  .cert-box p:last-child { margin-bottom: 0; }
+  .cert-box span { color: var(--slate); font-weight: 400; font-size: 14.5px; display: block; margin-top: 2px; }
+
+  .project-meta { color: var(--slate); font-size: 15px; margin: -8px 0 18px; }
+  .feature-list { list-style: none; margin: 0; padding: 0; }
+  .feature-list li { padding: 14px 0; border-top: 1px solid var(--line); font-size: 15.5px; }
+  .feature-list li:last-child { border-bottom: 1px solid var(--line); }
+  .feature-list li::before { content: "\2713"; color: var(--sage-dark); font-weight: 600; margin-right: 10px; }
+
+  .tl-item { position: relative; padding-left: 24px; margin-bottom: 34px; border-left: 2px solid var(--line); }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-item::before { content: ""; position: absolute; left: -6px; top: 4px; width: 10px; height: 10px; background: var(--sage); border-radius: 50%; }
+  .tl-role { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; }
+  .tl-meta { color: var(--slate); font-size: 14.5px; margin: 3px 0 10px; }
+  .tl-item ul { margin: 0; padding-left: 18px; }
+  .tl-item li { margin-bottom: 6px; font-size: 15.5px; }
+
+  .contact-box { background: var(--ink); color: var(--paper); border-radius: 4px; padding: 40px; }
+  .contact-box h2 { color: var(--paper-raised); font-size: 26px; margin-bottom: 12px; }
+  .contact-box p { color: #C9D6D1; font-size: 16px; max-width: 48ch; margin: 0 0 26px; }
+  .contact-box .btn-primary { background: var(--sage); color: var(--ink); }
+  .contact-box .btn-primary:hover { background: #7FA391; }
+  .contact-box .btn-secondary { border-color: #47605A; color: var(--paper-raised); }
+  .contact-box .btn-secondary:hover { background: var(--paper-raised); color: var(--ink); }
+  .contact-meta { margin-top: 26px; font-size: 14.5px; color: #9FB0AA; }
+  .contact-meta a { color: #C9DCD3; }
+
+  footer { padding: 30px 0 50px; font-size: 13.5px; color: var(--slate); }
+  footer a { color: var(--slate); }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 29px; }
+    .hero { padding: 52px 0 44px; }
+    .section-title { font-size: 22px; }
+    .stats { gap: 28px; }
+    .hero-inner { flex-direction: column-reverse; }
+    .hero-photo { width: 108px; height: 108px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Jamilyn Chrisha Chan</div>
+    <nav>
+      <a href="#certifications">Certifications</a>
+      <a href="#project">Project</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="border-bottom: none;">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Keeps your NDIS paperwork organized, tracked, and never overdue.</h1>
+          <div class="hero-rule"></div>
+          <p class="hero-sub">Administrative and compliance support for NDIS providers and disability support services. NDIS Worker Orientation and Induction certified, with hands-on experience building the systems that keep documentation audit-ready.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+            <a class="btn btn-secondary" href="Jamilyn_Chan_Resume_NDIS.pdf" target="_blank" rel="noopener">View resume</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="jamilyn.jpg" alt="Jamilyn Chrisha Chan">
+        </div>
+      </div>
+      <div class="stats">
+        <div>
+          <div class="stat-num">200+</div>
+          <div class="stat-label">Monthly cases documented</div>
+        </div>
+        <div>
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Accuracy rate</div>
+        </div>
+        <div>
+          <div class="stat-num">&lt;2h</div>
+          <div class="stat-label">Average response time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="wrap">
+      <div class="section-label">Certifications</div>
+      <h2 class="section-title">NDIS-certified and ready to support</h2>
+      <div class="cert-box">
+        <p>NDIS Worker Orientation Completion Certificate<span>Issued Jul 2026 — NDIS Quality and Safeguards Commission</span></p>
+        <p>New Worker – NDIS Induction Module Completion Certificate<span>Issued Aug 2026 — NDIS Quality and Safeguards Commission</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Documentation habits built for compliance work</h2>
+      <p class="lead">I've spent the last three years inside the CRM and support queue for a major appliance manufacturer's AU/NZ warranty program — processing 200+ cases monthly at 98% accuracy, and keeping every record audit-ready. That same discipline is what compliance-driven NDIS documentation needs: nothing missed, nothing undocumented, nothing left for someone else to chase down later.</p>
+      <p class="lead">I've also built the systems side of this work directly — a full service-agreement tracker for NDIS providers, with the validation and audit trails that compliance actually requires.</p>
+    </div>
+  </section>
+
+  <section id="project">
+    <div class="wrap">
+      <div class="section-label">Featured Project</div>
+      <h2 class="section-title">NDIS Agreement Hub</h2>
+      <p class="project-meta">Service-agreement tracking system built for NDIS providers — Lovable.dev / Supabase</p>
+      <ul class="feature-list">
+        <li>Role-based access control (owner/staff) with tested permission boundaries</li>
+        <li>Data validation enforced on both frontend and backend to prevent invalid records</li>
+        <li>CSV import/export with per-row validation and error handling</li>
+        <li>Full activity log for compliance auditing — who changed what, and when</li>
+        <li>Automated reminder emails for agreements unsigned 7+ days</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">Where the discipline comes from</h2>
+      <div class="tl-item">
+        <div class="tl-role">Customer Support Senior Specialist</div>
+        <div class="tl-meta">Platserv — Beko AU&amp;NZ Account (Manufacturer) · Apr 2024 – Present</div>
+        <ul>
+          <li>Manage 50+ daily customer interactions across phone and email, sub-2-hour response times</li>
+          <li>Process 200+ appliance warranty claims monthly at 98% accuracy</li>
+          <li>Review and submit payment and refund requests alongside service orders, routing them to the designated team</li>
+          <li>Maintain accurate service order documentation in line with manufacturer compliance guidelines</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">Process Associate</div>
+        <div class="tl-meta">Genpact Services LLC — Financial Retail Support · Oct 2022 – Jan 2024</div>
+        <ul>
+          <li>Handled 50–60 inbound calls daily, resolving account inquiries with First Call Resolution</li>
+          <li>Managed transaction inquiries, disputes, and documentation requests with accurate record-keeping</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="border-bottom: none;">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>Need someone reliable on your compliance paperwork?</h2>
+        <p>Based in the Philippines, NDIS-certified, and available full-time. Happy to talk through what your documentation and admin workload looks like.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="mailto:jamilynchrisha.chan@gmail.com">Email me</a>
+          <a class="btn btn-secondary" href="Jamilyn_Chan_Resume_NDIS.pdf" target="_blank" rel="noopener">View resume</a>
+        </div>
+        <div class="contact-meta">
+          jamilynchrisha.chan@gmail.com &nbsp;·&nbsp; +63 969 145 4898 &nbsp;·&nbsp; PHT (GMT+8)
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 Jamilyn Chrisha Chan &nbsp;·&nbsp; <a href="trades/">See admin/ops VA work</a>
+  </div>
+</footer>
+
+</body>
+</html>
